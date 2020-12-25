@@ -9,9 +9,18 @@ package day01;
  */
 public class Test02 {
 	public static void main(String[] args) {
-		System.out.println(84);
-		System.out.println(44);
-		System.out.println(9);
+		String str = "大家好！";
+		String str1 = "我是程序员！";
+		String str2 = "是优秀的";
+		String str3 = "是牛牛的";
+		String str4 = str.concat(str1);
+		System.out.println(str4);
+		String str5 = str4.replaceFirst("是",str2);
+		System.out.println(str5);
+		String str6 = str5.replaceAll(str2,str3);
+		System.out.println(str6);
+		String str7 = str6.substring(str.length());
+		System.out.println(str7);
 
 	}
 }
