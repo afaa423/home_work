@@ -31,7 +31,6 @@ public class Test08 {
     public static void main(String[] args) {
         String name;
         int age;
-
         String gender;
         int salary;
         Scanner console= new Scanner(System.in);

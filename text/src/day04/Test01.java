@@ -1,4 +1,8 @@
 package day04;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  * 创建一个集合c1，存放元素"one","two","three"
  * 再创建一个集合c2，存放元素"four","five","six"
@@ -10,7 +14,23 @@ package day04;
  *
  */
 public class Test01 {
-
+    public static void main(String[] args) {
+        Collection<String> list = new ArrayList<>();
+        Collection<String> list1 = new ArrayList<>();
+        Collection<String> list3 = new ArrayList<>();
+        list.add("one");
+        list3.add("one");
+        list.add("two");
+        list.add("three");
+        list1.add("four");
+        list1.add("five");
+        list3.add("five");
+        list1.add("six");
+        list.addAll(list1);
+        System.out.println(list.containsAll(list3));
+        list.remove("two");
+        System.out.println(list);
+    }
 }
 
 

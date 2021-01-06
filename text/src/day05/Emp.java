@@ -1,4 +1,8 @@
 package day05;
+
+import java.util.Date;
+import java.util.Objects;
+
 /**
  * 定义私有属性:
  * String name;
@@ -17,6 +21,97 @@ package day05;
  * @author Bonnie
  *
  */
-public class Emp {
+public class Emp implements Comparable<Emp>{
+    Emp(){
+        Date date = new Date();
+    }
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Emp emp = (Emp) o;
+        return age == emp.age &&
+                Objects.equals(name, emp.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, gender, salary, hiredate);
+    }
+
+    @Override
+    public String toString() {
+        return
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", salary=" + salary +
+                ", hiredate=" + hiredate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public Date getHiredate() {
+        return hiredate;
+    }
+
+    public void setHiredate(Date hiredate) {
+        this.hiredate = hiredate;
+    }
+
+    public Emp(String name, int age, String gender, int salary, Date hiredate) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.salary = salary;
+        this.hiredate = hiredate;
+    }
+
+    String name;
+    int age;
+    String gender;
+    int salary;
+    Date hiredate;
+
+    @Override
+    public int compareTo(Emp o) {
+        if (this.age > o.getAge()) {
+            return (this.age - o.getAge());
+        }
+        if (this.age < o.getAge()) {
+            return (this.age - o.getAge());
+        }
+        return 0;
+    }
 
 }
