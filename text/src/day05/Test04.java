@@ -1,4 +1,9 @@
 package day05;
+
+import org.junit.Test;
+
+import java.util.*;
+
 /**
  *创建一个Map，保存某个学生的成绩:
  *在控制台输入该学生成绩，格式:
@@ -14,5 +19,36 @@ package day05;
  *
  */
 public class Test04 {
-
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+        System.out.println("请输入学生成绩：");
+        String str = console.next();
+        Map<String,Integer> map = new HashMap<>();
+        String rege = "\\;";
+        String rege1 = "\\:";
+        String[] split = str.split(rege);
+        for (int i = 0; i < split.length; i++) {
+            String[] split1 = split[i].split(rege1);
+            map.put(split1[0],Integer.parseInt(split1[1]));
+        }
+        Integer score = map.get("物理");
+        System.out.println(score);
+        map.put("化学",96);
+        map.remove("英语");
+        Set<String> strings = map.keySet();
+        for (String ss:
+             strings) {
+            System.out.println(ss);
+        }
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        for (Map.Entry<String, Integer> map1 :
+                entries) {
+            System.out.println(map1);
+        }
+        Collection<Integer> values = map.values();
+        for (Integer i :
+                values) {
+            System.out.println(i);
+        }
+    }
 }

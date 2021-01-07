@@ -1,5 +1,6 @@
 package day05;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,9 +23,10 @@ import java.util.Objects;
  *
  */
 public class Emp implements Comparable<Emp>{
-    Emp(){
-        Date date = new Date();
+    public Emp() {
+
     }
+
     public String getName() {
         return name;
     }
@@ -106,9 +108,6 @@ public class Emp implements Comparable<Emp>{
     @Override
     public int compareTo(Emp o) {
         if (this.age > o.getAge()) {
-            return (this.age - o.getAge());
-        }
-        if (this.age < o.getAge()) {
             return (this.age - o.getAge());
         }
         return 0;
